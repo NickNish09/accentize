@@ -33,38 +33,6 @@ or with npm
 
 ```$ npm install --save accentize ```
 
-  
-
-## Why
-
-Usually when we deal with accents the most common approach is to remove the accent from words and then compare/do what you have to do, like:
-```
-let normalizedString = someFunctionToRemoveAccent("hèllô wórld") // returns hello world
-normalizedString === "hello world" // true	
-```
-What accentize does is kinda the opposite, it transforms a regular string into a regex that will match any versions of that string with accents:
-
-```
-// ES6
-import accentize from 'accentize';
-// commonjs
-const accentize = require('accentize');
-
-let accentizedString = accentize("hello world") 
-// returns the regex: /\s*[hⓗｈĥḣḧȟḥḩḫẖħⱨⱶɥ][eⓔｅèéêềếễểẽēḕḗĕėëẻěȅȇẹệȩḝęḙḛɇɛǝ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][oⓞｏòóôồốỗổõṍȭṏōṑṓŏȯȱöȫỏőǒȍȏơờớỡởợọộǫǭøǿɔꝋꝍɵ]\s*\s*[wⓦｗẁẃŵẇẅẘẉⱳ][oⓞｏòóôồốỗổõṍȭṏōṑṓŏȯȱöȫỏőǒȍȏơờớỡởợọộǫǭøǿɔꝋꝍɵ][rⓡｒŕṙřȑȓṛṝŗṟɍɽꝛꞧꞃ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][dⓓｄḋďḍḑḓḏđƌɖɗꝺ]\s*/i
-
-accentizedString.test("hello world") // true
-accentizedString.test("hèllô wórld") // true
-accentizedString.test("hêlló world") // true
-```
-With the accentized regex **you can test any variant of a string with accent using the normalized string!**
-
-Works with **case insensitivity** too:
-```
-let stringToFind = "hÉllò Wôrld"
-let accentizedString = accentize("hello world")
-accentizedString.test(stringToFind) // true
-```
 
 ## Common Usage
 **Test if a string is a accent version of other:**
@@ -110,3 +78,41 @@ db.users.find({"name": accentize("isis moana")})
 db.users.find({"name": accentize("is oana", true)}) // would work with the second param true, the findAll param
 ```
 Notice the second param as true in the second example, it is the findAll param, to include .* in the accentized regex, so the database will find everything that matches, making a query similar to %LIKE%.
+
+## Why
+
+Usually when we deal with accents the most common approach is to remove the accent from words and then compare/do what you have to do, like:
+```
+let normalizedString = someFunctionToRemoveAccent("hèllô wórld") // returns hello world
+normalizedString === "hello world" // true	
+```
+What accentize does is kinda the opposite, it transforms a regular string into a regex that will match any versions of that string with accents:
+
+```
+// ES6
+import accentize from 'accentize';
+// commonjs
+const accentize = require('accentize');
+
+let accentizedString = accentize("hello world") 
+// returns the regex: /\s*[hⓗｈĥḣḧȟḥḩḫẖħⱨⱶɥ][eⓔｅèéêềếễểẽēḕḗĕėëẻěȅȇẹệȩḝęḙḛɇɛǝ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][oⓞｏòóôồốỗổõṍȭṏōṑṓŏȯȱöȫỏőǒȍȏơờớỡởợọộǫǭøǿɔꝋꝍɵ]\s*\s*[wⓦｗẁẃŵẇẅẘẉⱳ][oⓞｏòóôồốỗổõṍȭṏōṑṓŏȯȱöȫỏőǒȍȏơờớỡởợọộǫǭøǿɔꝋꝍɵ][rⓡｒŕṙřȑȓṛṝŗṟɍɽꝛꞧꞃ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][dⓓｄḋďḍḑḓḏđƌɖɗꝺ]\s*/i
+
+accentizedString.test("hello world") // true
+accentizedString.test("hèllô wórld") // true
+accentizedString.test("hêlló world") // true
+```
+With the accentized regex **you can test any variant of a string with accent using the normalized string!**
+
+Works with **case insensitivity** too:
+```
+let stringToFind = "hÉllò Wôrld"
+let accentizedString = accentize("hello world")
+accentizedString.test(stringToFind) // true
+```
+
+## Params
+```
+function accentize(stringToAccentize, findAll) { ... }
+```
+**stringToAccentize**: the string that will be accentized
+**findAll**: if is true the accentized regex will have the .* operator between words, so it can match more precisely multi word strings.
