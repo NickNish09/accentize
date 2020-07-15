@@ -1,11 +1,15 @@
 {
     "name": "accentize",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Turn any string into an accentized regex for searching, find patterns, querying, filtering...",
     "source": "src/index.js",
     "license": "MIT",
-    "repository": "accentize",
     "main": "src/index.js",
+    "homepage": "https://github.com/NickNish09/accentize",
+    "repository": {
+      "type" : "git",
+      "url" : "https://github.com/NickNish09/accentize"
+    },      
     "keywords": [
       "accent",
       "unaccent",
