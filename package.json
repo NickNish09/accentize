@@ -1,6 +1,6 @@
 {
     "name": "accentize",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Turn any string into an accentized regex for searching, find patterns, querying, filtering...",
     "source": "src/index.js",
     "license": "MIT",
