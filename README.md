@@ -1,7 +1,7 @@
 
 # Accentize
 
-![badge of version](https://img.shields.io/badge/npm-v1.0.0-green)
+![badge of version](https://img.shields.io/badge/npm-v1.0.1-green)
 
   
 
