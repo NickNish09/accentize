@@ -115,4 +115,5 @@ accentizedString.test(stringToFind) // true
 function accentize(stringToAccentize, findAll) { ... }
 ```
 **stringToAccentize**: the string that will be accentized
+
 **findAll**: if is true the accentized regex will have the .* operator between words, so it can match more precisely multi word strings.
