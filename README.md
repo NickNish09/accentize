@@ -58,7 +58,7 @@ accentizedString.test("hêlló world") // true
 const accentize = require('accentize');
 
 let  arrayToFilter  = [{name: "João Luís"}, {name: "Mária Ríta"}, {name: "Ísis Môàna"}]
-let accentizedString = accentize("joao luis")
+let accentizedString = accentize("joao luis", true)
 
 let  filteredArray  =  arrayToFilter.filter(user  =>  user.name.match(accentizedString))
 // [{"name":"João Luís"}]
