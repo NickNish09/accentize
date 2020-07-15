@@ -69,9 +69,6 @@ accentizedString.test(stringToFind) // true
 ## Common Usage
 **Test if a string is a accent version of other:**
 ```
-// ES6
-import accentize from 'accentize';
-// commonjs
 const accentize = require('accentize');
 
 let accentizedString = accentize("hello world") 
@@ -82,9 +79,6 @@ accentizedString.test("hêlló world") // true
 
 **Filter a array where strings can be accent versions:**
 ```
-// ES6
-import accentize from 'accentize';
-// commonjs
 const accentize = require('accentize');
 
 let  arrayToFilter  = [{name: "João Luís"}, {name: "Mária Ríta"}, {name: "Ísis Môàna"}]
@@ -108,9 +102,6 @@ db.getCollection("users")
 ```
 You want to make a query to find user with the name Ísis Môàna, by searching for isis moana. Then use:
 ```
-// ES6
-import accentize from 'accentize';
-// commonjs
 const accentize = require('accentize');
 
 db.users.find({"name": accentize("isis moana")})
