@@ -16,7 +16,7 @@ function accentizeString(str) {
   return returnString;
 }
 
-function makeAccentizedRegex(query, findAll) {
+function accentize(query, findAll) {
   let arrayOfQueries = query.trim().toLowerCase().split(" ");
   let modifier = "\\s*"
   if(findAll)
@@ -28,19 +28,5 @@ function makeAccentizedRegex(query, findAll) {
 
   return new RegExp(queryRegex, "i");
 }
-  
-function test(){
-  let testString = "BàTáTa rúsTícâ côm pûré dë mÄndiöcÅ"
-  let accentizedString = (makeAccentizedRegex("hello world"));
 
-  console.log(accentizedString)
-  console.log(accentizedString.test("hEllo world"))
-  console.log(accentizedString.test("helló wòrld"))
-  console.log(accentizedString.test("hêllo wórld"))
-  console.log(testString.match(makeAccentizedRegex("batata rustica ")))
-  console.log(testString.match(makeAccentizedRegex("batata rustica ", true)))
-}
-  
-test();
-
-module.exports = makeAccentizedRegex;
+module.exports = accentize;

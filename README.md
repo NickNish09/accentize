@@ -95,6 +95,7 @@ let  filteredArray  =  arrayToFilter.filter(user  =>  user.name.match(accentized
 ```
 
 **With MongoDB queries:**
+
 Suppose you have a Mongo DB with users, represented with the following array:
 ```
 db.getCollection("users") 
