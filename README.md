@@ -1,7 +1,7 @@
 
 # Accentize
 
-![badge of version](https://img.shields.io/badge/npm-v1.0.1-green)
+![badge of version](https://img.shields.io/badge/npm-v1.0.2-green)
 
   
 
@@ -34,7 +34,15 @@ or with npm
 ```$ npm install --save accentize ```
 
 
-## Common Usage
+## Usage
+**Turn string into a accentized regex:**
+```
+const accentize = require('accentize');
+
+accentize("hello world")
+// returns the regex: /\s*[hⓗｈĥḣḧȟḥḩḫẖħⱨⱶɥ][eⓔｅèéêềếễểẽēḕḗĕėëẻěȅȇẹệȩḝęḙḛɇɛǝ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][oⓞｏòóôồốỗổõṍȭṏōṑṓŏȯȱöȫỏőǒȍȏơờớỡởợọộǫǭøǿɔꝋꝍɵ]\s*\s*[wⓦｗẁẃŵẇẅẘẉⱳ][oⓞｏòóôồốỗổõṍȭṏōṑṓŏȯȱöȫỏőǒȍȏơờớỡởợọộǫǭøǿɔꝋꝍɵ][rⓡｒŕṙřȑȓṛṝŗṟɍɽꝛꞧꞃ][lⓛｌŀĺľḷḹļḽḻſłƚɫⱡꝉꞁꝇ][dⓓｄḋďḍḑḓḏđƌɖɗꝺ]\s*/i
+```
+
 **Test if a string is a accent version of other:**
 ```
 const accentize = require('accentize');
